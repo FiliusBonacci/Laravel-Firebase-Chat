@@ -9,7 +9,7 @@
                 <div class="three wide column">
                     <div class="ui vertical pointing menu">
                         <h3 class="item ui header">
-                            Usuarios:
+                            Users:
                         </h3>
                         @foreach($users as $user)
                             @if($user->id == $receptorUser->id)
@@ -28,11 +28,11 @@
                 <div class="thirteen wide column">
                     <div class="ui segment" style="padding: 1.5em 1.5em;">
                         <div class="ui comments" style="max-width: 100%;">
-                            <h3 class="ui dividing header"><i class="talk outline icon"></i> Conversación con {{ $receptorUser->name }}</h3>
-                            <firebase-messages user-id="{{ Auth::user()->id }}" chat-id="{{ $chat->id }}" receptor-name="{{ $receptorUser->name }}"></firebase-messages>
+                            <h3 class="ui dividing header"><i class="talk outline icon"></i> Chat z użytkownikiem {{ $receptorUser->name }}</h3>
+                            <firebase-messages user-id="{{ Auth::id() }}" chat-id="{{ $chat->id }}" receptor-name="{{ $receptorUser->name }}"></firebase-messages>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </div>

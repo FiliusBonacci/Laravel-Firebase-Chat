@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="!firebaseMessagesLoaded" class="ui active centered inline text loader">Cargando conversación...</div>
+        <div v-if="!firebaseMessagesLoaded" class="ui active centered inline text loader">Ładowanie konwersacji...</div>
         <div id="comments-container" style="max-height: 55vh;overflow-y: scroll;padding-right:10px;padding-bottom: 40px;">
             <div v-if="historyMessages.length > 0" v-for="message in historyMessages" v-cloak>
 
@@ -30,8 +30,8 @@
                           <div class="metadata">
                             <span class="date">{{ humanize(message.date) }}</span>
                           </div>
-                          <a class="author">Tú</a>
-                          
+                          <a class="author">Ty</a>
+
                           <div class="text">
                             <p>{{ message.text }}</p>
                           </div>
@@ -42,16 +42,16 @@
         </div>
 
          <div v-if="firebaseMessagesLoaded && historyMessages.length < 1">
-            <p><small>No Hay Mensajes, envía el primero para iniciar la conversación.</small></p>
+            <p><small>Brak wiadomości, Wyślij pierwszą wiadomość, aby rozpocząć rozmowę.</small></p>
          </div>
-      
+
 
         <form @submit.prevent="sendMessage()" class="ui reply form">
             <div class="field">
                 <input v-model="message.text" placeholder="Escribe tu mensaje" type="text">
             </div>
             <button type="submit" class="ui blue labeled submit icon button">
-              <i class="send outline icon"></i> Enviar
+              <i class="send outline icon"></i> Wyślij
             </button>
         </form>
     </div>
@@ -68,7 +68,7 @@
                 },
                 historyMessages: [],
                 firstLoad: false   ,
-                firebaseMessagesLoaded: false 
+                firebaseMessagesLoaded: false
             }
         },
         mounted(){
@@ -140,7 +140,7 @@
                         }
                     });
                 }
-                
+
             }
         }
     }

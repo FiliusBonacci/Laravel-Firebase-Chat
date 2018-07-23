@@ -31,7 +31,7 @@
         <a href="{{route('inicio')}}" class="item"><i class="user circle icon"></i> {{Auth::user()->username}}</a>
         <div class="right menu">
           <div class="item">
-            <a id="logoutButton" class="ui red button"><i class="sign out icon"></i> Cerrar Sesión</a>
+            <a id="logoutButton" class="ui red button"><i class="sign out icon"></i> Wyloguj</a>
           </div>
         </div>
       </div>
@@ -43,16 +43,16 @@
     <div id="logoutModal" class="ui basic modal">
       <div class="ui icon header">
         <i class="sign out icon"></i>
-        ¿Está seguro que desea cerrar la sesión?
+            Czy na pewno chcesz się wylogować?
       </div>
       <div class="actions" style="text-align: center;">
         <div class="ui red basic cancel inverted button">
           <i class="remove icon"></i>
-          No
+          Nie
         </div>
         <a href="{{route('logout')}}" class="ui green ok inverted button">
           <i class="checkmark icon"></i>
-          Si
+          Tak
         </a>
       </div>
     </div>
@@ -68,7 +68,7 @@
                 $('#logoutModal').modal('show');
             })
         });
-        
+
     </script>
 
     @yield('script')

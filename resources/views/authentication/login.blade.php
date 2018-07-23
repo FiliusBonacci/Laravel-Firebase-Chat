@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
   <!-- Site Properties -->
-  <title>Iniciar Sesión</title>
+  <title>Logowanie</title>
 
   <link rel="stylesheet" type="text/css" href="{{ asset('semantic/dist/semantic.min.css') }}">
 
@@ -25,7 +25,7 @@
       max-width: 450px;
     }
   </style>
-  
+
   </script>
 </head>
 <body>
@@ -34,7 +34,7 @@
   <div class="column">
     <h2 class="ui teal image header">
       <div class="content">
-        Iniciar Sesión
+        Logowanie
       </div>
     </h2>
     <form class="ui large form" method="POST" action="{{ route('login') }}">
@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <button type="submit" class="ui fluid large teal submit button">Entrar</button>
+        <button type="submit" class="ui fluid large teal submit button">Zaloguj</button>
 
       </div>
 
@@ -80,7 +80,7 @@
     </form>
 
     <div class="ui message">
-      ¿Eres Nuevo? <a href="{{route('registro')}}">Regístrate</a>
+      Nie masz konta? <a href="{{route('registro')}}">Rejestracja</a>
     </div>
   </div>
 </div>

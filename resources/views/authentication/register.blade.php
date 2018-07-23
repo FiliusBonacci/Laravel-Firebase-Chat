@@ -8,7 +8,7 @@
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Site Properties -->
-    <title>Registro</title>
+    <title>Rejestracja</title>
 
     <link rel="stylesheet" type="text/css" href="{{ asset('semantic/dist/semantic.min.css') }}">
 
@@ -33,7 +33,7 @@
   <div class="column">
     <h2 class="ui teal image header">
       <div class="content">
-        Registro
+        Rejestracja
       </div>
     </h2>
     <form v-on:submit.prevent="signUpUser" class="ui large form" method="POST" action="{{ route('register') }}">
@@ -45,32 +45,32 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" v-model="registerData.name" placeholder="Nombre Completo" value="{{old('name')}}">
+            <input type="text" v-model="registerData.name" placeholder="Imię" value="{{old('name')}}">
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <i class="envelope icon"></i>
-            <input type="text" v-model="registerData.email" placeholder="Correo eletrónico" value="{{old('email')}}">
+            <input type="text" v-model="registerData.email" placeholder="Email" value="{{old('email')}}">
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <i class="user circle icon"></i>
-            <input type="text" v-model="registerData.username" placeholder="Nombre de Usuario" value="{{old('username')}}">
+            <input type="text" v-model="registerData.username" placeholder="Nazwa użytkownika" value="{{old('username')}}">
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" v-model="registerData.password" placeholder="Contraseña">
+            <input type="password" v-model="registerData.password" placeholder="Haslo">
           </div>
         </div>
 
-        <button type="submit" :class="['ui fluid large teal submit button', {'loading': loading}]" :disabled="loading">Entrar</button>
+        <button type="submit" :class="['ui fluid large teal submit button', {'loading': loading}]" :disabled="loading">Zapisz</button>
 
       </div>
 
@@ -87,7 +87,7 @@
     </form>
 
     <div class="ui message">
-      ¿Ya estás registrado? <a href="{{route('entrar')}}">Iniciar Sesión</a>
+      Masz juz konto? <a href="{{route('entrar')}}">Zaloguj</a>
     </div>
   </div>
 </div>
@@ -114,7 +114,7 @@
                 this.successRegister = null;
 
                 axios.post('register', querystring.stringify(this.registerData),{
-                    headers: { 
+                    headers: {
                         "X-CSRF-TOKEN": document.head.querySelector('meta[name="csrf-token"]').content,
                         "Content-Type": "application/x-www-form-urlencoded"
                     }
@@ -124,7 +124,7 @@
                     this.loading = false;
                     this.successRegister = response.data.success;
                     this.registerData = {};
-                            
+
                 }).catch(function (error) {
 
                     this.loading = false;
@@ -133,7 +133,7 @@
                     }else{
                         console.log('Error: ' + error);
                     }
-                  
+
                 }.bind(this));
             }
         }
