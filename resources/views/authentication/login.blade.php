@@ -46,14 +46,14 @@
         <div class="field">
           <div class="ui left icon input">
             <i class="user icon"></i>
-            <input type="text" name="email" placeholder="Correo eletrónico" value="{{old('email')}}">
+            <input type="text" name="email" placeholder="Email" value="{{old('email')}}">
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <i class="lock icon"></i>
-            <input type="password" name="password" placeholder="Contraseña">
+            <input type="password" name="password" placeholder="Haslo">
           </div>
         </div>
 
