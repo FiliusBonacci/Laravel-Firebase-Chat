@@ -9,7 +9,7 @@
                 <div class="three wide column">
                     <div class="ui vertical pointing menu">
                         <h3 class="item ui header">
-                            Users:
+                            Użytkownicy:
                         </h3>
                         @foreach($users as $user)
                             @if($user->id == $receptorUser->id)
@@ -40,7 +40,8 @@
 @endsection
 
 @section('script')
-    <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+    {{-- <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script> --}}
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
     <script>
         // Initialize Firebase
         var config = {

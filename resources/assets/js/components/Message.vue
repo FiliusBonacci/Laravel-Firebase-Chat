@@ -48,7 +48,7 @@
 
         <form @submit.prevent="sendMessage()" class="ui reply form">
             <div class="field">
-                <input v-model="message.text" placeholder="Escribe tu mensaje" type="text">
+                <input v-model="message.text" placeholder="Napisz wiadomość" type="text">
             </div>
             <button type="submit" class="ui blue labeled submit icon button">
               <i class="send outline icon"></i> Wyślij
