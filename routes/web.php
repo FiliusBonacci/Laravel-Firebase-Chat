@@ -15,13 +15,13 @@ Route::get('/', function () {
     return redirect('entrar');
 });
 
-Route::get('/entrar', function() {
+Route::get('/enter', function() {
     return view('authentication.login');
 })->name("entrar");
 
 Route::post('login', ['as' => 'login', 'uses' => 'CustomAuthController@login']);
 
-Route::get('/registro', function() {
+Route::get('/register', function() {
     return view('authentication.register');
 })->name('registro');
 
@@ -32,6 +32,6 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'AppController@logout']);
 //Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/inicio', ['as' => 'inicio', 'uses' => 'AppController@index']);
+    Route::get('/home', ['as' => 'inicio', 'uses' => 'AppController@index']);
     Route::get('chat/{username}',['as' => 'chat', 'uses' => 'AppController@usersChat']);
 });
